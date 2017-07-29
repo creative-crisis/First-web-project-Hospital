@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="patientController" class="controllers.PatientController">
+        <constructor-arg index="0" ref="doctorsServiceImpl"/>
+        <constructor-arg index="1" ref="departmentsServiceImpl"/>
+        <constructor-arg index="2" ref="registrationServiceImpl"/>
+    </bean>
+
+    <bean id="editController" class="controllers.EditController">
+        <constructor-arg ref="doctorsServiceImpl"/>
+    </bean>
+
+    <bean id="addController" class="controllers.AddController">
+        <constructor-arg ref="doctorsServiceImpl"/>
+    </bean>
+
+    <bean id="listController" class="controllers.ListController">
+        <constructor-arg index="0" ref="doctorsServiceImpl"/>
+        <constructor-arg index="1" ref="departmentsServiceImpl"/>
+    </bean>
+
+    <bean id="registrationServiceImpl" class="dao.impl.RegistrationServiceImpl" />
+    <bean id="departmentsServiceImpl" class="dao.impl.DepartmentsServiceImpl" />
+
+    <bean id="doctorsServiceImpl" class="dao.impl.DoctorsServiceImpl" >
+            <constructor-arg ref="sessionFactory" />
+    </bean>
+
+    <bean id="sessionFactory" class="persistence.HibernateUtil" factory-method="getSessionFactory"/>
+
+</beans>

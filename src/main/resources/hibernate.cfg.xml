@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+
+<hibernate-configuration>
+    <session-factory>
+
+        <!-- Connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/Hospital</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">12345</property>
+
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQL94Dialect</property>
+
+        <!-- Print executed SQL to stdout -->
+        <property name="show_sql">true</property>
+
+        <!-- <property name="hbm2ddl.auto">validate</property> -->
+
+        <!-- Annotated entity classes -->
+        <!-- <mapping class="persistence.Doctor"/> -->
+        <!-- <mapping class="persistence.Department"/> -->
+        <mapping resource="doctor.hbm.xml"></mapping>
+        <mapping resource="department.hbm.xml"></mapping>
+        <mapping resource="ticket.hbm.xml"></mapping>
+        <mapping resource="workday.hbm.xml"></mapping>
+        <mapping resource="interval.hbm.xml"></mapping>
+
+    </session-factory>
+</hibernate-configuration>

@@ -1,0 +1,37 @@
+.calendar input {
+    position: absolute;
+    left: -9999px;
+}
+
+.calendar label {
+    display: block;
+    background: linear-gradient(to top, cornflowerblue, lightsteelblue);
+    cursor: pointer;
+    height: 14pt;
+    width: 45pt;
+}
+
+.calendar input:checked + label {
+    background: linear-gradient(to bottom, lightseagreen, palegreen);
+}
+
+
+.calendar table {
+    width: 100%;
+    border: 1px solid black;
+    margin: auto;
+}
+
+.calendar th {
+    background: linear-gradient(to bottom, lightgrey, lightseagreen);
+    border: 1px solid black;
+}
+
+
+.calendar td {
+    width: 44pt;
+    border: 1px solid black;
+    text-align: center;
+    background: linear-gradient(to top, dimgray, lightgrey);
+}
+

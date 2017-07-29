@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="persistence.Doctor" table="Doctors" >
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true" />
+            <generator class="increment" />
+        </id>
+        <property name="firstName">
+            <column name="first_name" sql-type="character varying(20)" not-null="true" />
+        </property>
+        <property name="lastName">
+            <column name="last_name" sql-type="character varying(30)" not-null="true" />
+        </property>
+        <property name="specialization">
+            <column name="specialization" sql-type="integer" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

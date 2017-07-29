@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="persistence.Interval" table="Intervals" >
+        <id name="id">
+            <column name="id" sql-type="integer" not-null="true" />
+            <generator class="increment" />
+        </id>
+        <property name="time">
+            <column name="time" sql-type="integer" not-null="true" />
+        </property>
+        <property name="ticket">
+            <column name="ticket" sql-type="integer" />
+        </property>
+        <property name="workday">
+            <column name="workday" sql-type="integer" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>
